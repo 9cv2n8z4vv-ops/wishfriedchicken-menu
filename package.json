@@ -1,0 +1,29 @@
+{
+  "name": "wish-fried-chicken-menu",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node restore-structure.cjs && next dev",
+    "build": "node restore-structure.cjs && next build",
+    "start": "next start",
+    "check": "node restore-structure.cjs && tsc --noEmit",
+    "db:migrate": "node restore-structure.cjs && tsx scripts/migrate.ts",
+    "db:seed": "node restore-structure.cjs && tsx scripts/seed.ts",
+    "db:setup": "node restore-structure.cjs && tsx scripts/migrate.ts && tsx scripts/seed.ts",
+    "restore": "node restore-structure.cjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "next": "^15.3.5",
+    "postgres": "^3.4.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

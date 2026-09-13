@@ -1,0 +1,226 @@
+[
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fcategories%2F%5Bid%5D%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/categories/[id]/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fcategories%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/categories/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Ferror.tsx.srcpack",
+    "target": "app/admin/(protected)/error.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Flayout.tsx.srcpack",
+    "target": "app/admin/(protected)/layout.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fmenu%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/menu/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fproducts%2F%5Bid%5D%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/products/[id]/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fproducts%2Fnew%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/products/new/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fproducts%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/products/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2F%28protected%29%2Fsettings%2Fpage.tsx.srcpack",
+    "target": "app/admin/(protected)/settings/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fadmin%2Flogin%2Fpage.tsx.srcpack",
+    "target": "app/admin/login/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Fcategories%2F%5Bid%5D%2Froute.ts.srcpack",
+    "target": "app/api/admin/categories/[id]/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Fcategories%2Froute.ts.srcpack",
+    "target": "app/api/admin/categories/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Flogin%2Froute.ts.srcpack",
+    "target": "app/api/admin/login/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Flogout%2Froute.ts.srcpack",
+    "target": "app/api/admin/logout/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Fproducts%2F%5Bid%5D%2Froute.ts.srcpack",
+    "target": "app/api/admin/products/[id]/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Fproducts%2Froute.ts.srcpack",
+    "target": "app/api/admin/products/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Freorder%2Froute.ts.srcpack",
+    "target": "app/api/admin/reorder/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Fsettings%2Froute.ts.srcpack",
+    "target": "app/api/admin/settings/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fapi%2Fadmin%2Fvisibility%2Froute.ts.srcpack",
+    "target": "app/api/admin/visibility/route.ts"
+  },
+  {
+    "packed": "PACKED__app%2Fglobals.css.srcpack",
+    "target": "app/globals.css"
+  },
+  {
+    "packed": "PACKED__app%2Flayout.tsx.srcpack",
+    "target": "app/layout.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Floading.tsx.srcpack",
+    "target": "app/loading.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Fpage.tsx.srcpack",
+    "target": "app/page.tsx"
+  },
+  {
+    "packed": "PACKED__app%2Frobots.ts.srcpack",
+    "target": "app/robots.ts"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FAdminShell.tsx.srcpack",
+    "target": "components/admin/AdminShell.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FAdminToastHub.tsx.srcpack",
+    "target": "components/admin/AdminToastHub.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FCategoryEditor.tsx.srcpack",
+    "target": "components/admin/CategoryEditor.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FCategoryManager.tsx.srcpack",
+    "target": "components/admin/CategoryManager.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FConfirmDeleteButton.tsx.srcpack",
+    "target": "components/admin/ConfirmDeleteButton.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FLoginForm.tsx.srcpack",
+    "target": "components/admin/LoginForm.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FLogoutButton.tsx.srcpack",
+    "target": "components/admin/LogoutButton.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FMenuSorter.tsx.srcpack",
+    "target": "components/admin/MenuSorter.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FProductEditor.tsx.srcpack",
+    "target": "components/admin/ProductEditor.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FSettingsForm.tsx.srcpack",
+    "target": "components/admin/SettingsForm.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fadmin%2FVisibilityButton.tsx.srcpack",
+    "target": "components/admin/VisibilityButton.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fmenu%2FCategoryNav.tsx.srcpack",
+    "target": "components/menu/CategoryNav.tsx"
+  },
+  {
+    "packed": "PACKED__components%2Fmenu%2FMenuProduct.tsx.srcpack",
+    "target": "components/menu/MenuProduct.tsx"
+  },
+  {
+    "packed": "PACKED__database%2F001_init.sql.srcpack",
+    "target": "database/001_init.sql"
+  },
+  {
+    "packed": "PACKED__lib%2Fauth%2Fapi.ts.srcpack",
+    "target": "lib/auth/api.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fauth%2Findex.ts.srcpack",
+    "target": "lib/auth/index.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fconstants.ts.srcpack",
+    "target": "lib/constants.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fdb%2Findex.ts.srcpack",
+    "target": "lib/db/index.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fdb%2Fmenu.ts.srcpack",
+    "target": "lib/db/menu.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fdb%2Fslug.ts.srcpack",
+    "target": "lib/db/slug.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fformat.ts.srcpack",
+    "target": "lib/format.ts"
+  },
+  {
+    "packed": "PACKED__lib%2Fsecurity.ts.srcpack",
+    "target": "lib/security.ts"
+  },
+  {
+    "packed": "PACKED__middleware.ts.srcpack",
+    "target": "middleware.ts"
+  },
+  {
+    "packed": "PACKED__next-env.d.ts.srcpack",
+    "target": "next-env.d.ts"
+  },
+  {
+    "packed": "PACKED__next.config.ts.srcpack",
+    "target": "next.config.ts"
+  },
+  {
+    "packed": "PACKED__public%2Fwish-logo-full.png.srcpack",
+    "target": "public/wish-logo-full.png"
+  },
+  {
+    "packed": "PACKED__public%2Fwish-logo.png.srcpack",
+    "target": "public/wish-logo.png"
+  },
+  {
+    "packed": "PACKED__scripts%2Fmigrate.ts.srcpack",
+    "target": "scripts/migrate.ts"
+  },
+  {
+    "packed": "PACKED__scripts%2Fseed.ts.srcpack",
+    "target": "scripts/seed.ts"
+  },
+  {
+    "packed": "PACKED__tsconfig.json.srcpack",
+    "target": "tsconfig.json"
+  },
+  {
+    "packed": "PACKED__types%2Fmenu.ts.srcpack",
+    "target": "types/menu.ts"
+  }
+]

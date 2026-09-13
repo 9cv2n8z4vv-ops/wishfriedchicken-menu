@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Wish Fried Chicken | Menü",
+  description: "Wish Fried Chicken güncel menüsü, burgerlar, wings, tenders, Wish Specials, soslar ve içecekler.",
+  openGraph: {
+    title: "Wish Fried Chicken | Menü",
+    description: "Wish Fried Chicken güncel menüsü, burgerlar, wings, tenders, Wish Specials, soslar ve içecekler.",
+    type: "website",
+    images: [{ url: "/wish-logo-full.png", width: 941, height: 1672, alt: "Wish Fried Chicken" }]
+  },
+  icons: {
+    icon: "/wish-logo.png",
+    apple: "/wish-logo.png"
+  }
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="tr">
+      <body>{children}</body>
+    </html>
+  );
+}
