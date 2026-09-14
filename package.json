@@ -2,24 +2,31 @@
   "name": "wish-fried-chicken-menu",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "dev": "node restore-structure.cjs && next dev",
-    "build": "node restore-structure.cjs && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "check": "node restore-structure.cjs && tsc --noEmit",
-    "db:migrate": "node restore-structure.cjs && tsx scripts/migrate.ts",
-    "db:seed": "node restore-structure.cjs && tsx scripts/seed.ts",
-    "db:setup": "node restore-structure.cjs && tsx scripts/migrate.ts && tsx scripts/seed.ts",
-    "restore": "node restore-structure.cjs"
+    "check": "tsc --noEmit",
+    "db:migrate": "node --import tsx scripts/migrate.ts",
+    "db:seed": "node --import tsx scripts/seed.ts",
+    "db:setup": "npm run db:migrate && npm run db:seed",
+    "test:integration": "npm run build && node tests/integration.mjs"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.2",
-    "next": "^15.3.5",
-    "postgres": "^3.4.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "bcryptjs": "3.0.3",
+    "next": "15.5.25",
+    "postgres": "3.4.9",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "0.0.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@electric-sql/pglite-socket": "0.2.11",
     "@types/node": "^22.15.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
