@@ -1,0 +1,67 @@
+import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
+import { requireApiAdmin } from "@/lib/auth/api";
+import { sql } from "@/lib/db";
+import { ValidationError, assertSameOrigin, parseBoolean, parseNonNegativePrice, parseSortOrder, parseSpiceLevel } from "@/lib/security";
+
+type PriceOptionInput = { label?: unknown; price?: unknown };
+
+function normalizeOptions(value: unknown) {
+  if (!Array.isArray(value)) return [];
+  return value.map((raw, index) => {
+    const option = raw as PriceOptionInput;
+    const label = typeof option.label === "string" ? option.label.trim() : "";
+    if (!label) throw new ValidationError(`Fiyat seçeneği ${index + 1} için etiket zorunludur.`);
+    const price = parseNonNegativePrice(option.price);
+    if (price === null) throw new ValidationError(`Fiyat seçeneği ${index + 1} için fiyat zorunludur.`);
+    return { label, price };
+  });
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    assertSameOrigin(request);
+    if (!(await requireApiAdmin(request))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const body = await request.json();
+    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const categoryId = typeof body.category_id === "string" ? body.category_id : "";
+    if (!name) return NextResponse.json({ error: "Ürün adı boş olamaz." }, { status: 400 });
+    if (!categoryId) return NextResponse.json({ error: "Kategori seçilmelidir." }, { status: 400 });
+
+    const price = parseNonNegativePrice(body.price);
+    const spiceLevel = parseSpiceLevel(body.spice_level ?? 0);
+    const options = normalizeOptions(body.price_options);
+    const [category] = await sql<{ id: string }[]>`select id from categories where id = ${categoryId} limit 1`;
+    if (!category) return NextResponse.json({ error: "Kategori bulunamadı." }, { status: 400 });
+
+    const productId = await sql.begin(async (tx) => {
+      const [created] = await tx<{ id: string }[]>`
+        insert into products (category_id, name, description, price, spice_level, sort_order, is_active, note)
+        values (
+          ${categoryId}, ${name},
+          ${typeof body.description === "string" && body.description.trim() ? body.description.trim() : null},
+          ${price}, ${spiceLevel}, ${parseSortOrder(body.sort_order)}, ${parseBoolean(body.is_active, true)},
+          ${typeof body.note === "string" && body.note.trim() ? body.note.trim() : null}
+        )
+        returning id
+      `;
+      for (const [index, option] of options.entries()) {
+        await tx`
+          insert into product_price_options (product_id, label, price, sort_order)
+          values (${created.id}, ${option.label}, ${option.price}, ${index + 1})
+        `;
+      }
+      return created.id;
+    });
+
+    revalidatePath("/");
+    revalidatePath("/admin");
+    revalidatePath("/admin/products");
+    revalidatePath(`/admin/categories/${categoryId}`);
+    return NextResponse.json({ ok: true, id: productId });
+  } catch (error) {
+    console.error("Create product failed", error);
+    const message = error instanceof ValidationError ? error.message : "Bir hata oluştu. Lütfen tekrar deneyin.";
+    return NextResponse.json({ error: message }, { status: 400 });
+  }
+}

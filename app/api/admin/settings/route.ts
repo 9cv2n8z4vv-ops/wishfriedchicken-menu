@@ -1,0 +1,34 @@
+import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
+import { requireApiAdmin } from "@/lib/auth/api";
+import { sql } from "@/lib/db";
+import { ValidationError, assertSameOrigin } from "@/lib/security";
+
+const allowedKeys = ["site_name", "footer_text", "missing_price_text", "meta_description"] as const;
+
+export async function PUT(request: NextRequest) {
+  try {
+    assertSameOrigin(request);
+    if (!(await requireApiAdmin(request))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const body = await request.json();
+
+    await sql.begin(async (tx) => {
+      for (const key of allowedKeys) {
+        const value = typeof body[key] === "string" ? body[key].trim() : "";
+        if (!value) throw new ValidationError("Tüm ayar alanlarını doldurun.");
+        await tx`
+          insert into app_settings (key, value)
+          values (${key}, ${value})
+          on conflict (key) do update set value = excluded.value
+        `;
+      }
+    });
+
+    revalidatePath("/");
+    revalidatePath("/admin/settings");
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("Settings update failed", error);
+    return NextResponse.json({ error: error instanceof ValidationError ? error.message : "Bir hata oluştu. Lütfen tekrar deneyin." }, { status: 400 });
+  }
+}

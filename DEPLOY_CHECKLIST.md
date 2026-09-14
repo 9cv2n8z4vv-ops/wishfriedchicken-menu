@@ -1,16 +1,13 @@
-# Deployment Checklist
+# Canlı yayın kontrolü
 
-- [ ] `.env.local` veya Vercel env içinde `DATABASE_URL` tanımlı
-- [ ] `ADMIN_SEED_PASSWORD` yalnızca seed sırasında secret olarak tanımlı
-- [ ] `npm run db:migrate` tamamlandı
-- [ ] `npm run db:seed` tamamlandı
-- [ ] Public `/` açılıyor
-- [ ] `/admin` oturumsuzken `/admin/login` sayfasına yönleniyor
-- [ ] Admin login çalışıyor
-- [ ] Ürün fiyatı değiştiriliyor ve public sayfaya yansıyor
-- [ ] Kategori/ürün ekleme-silme çalışıyor
-- [ ] Aktif/pasif toggle çalışıyor
-- [ ] Drag & drop sıralama refresh sonrası korunuyor
-- [ ] WINGS çoklu fiyatları doğru
-- [ ] Eksik fiyatlı ürün `0 TL` göstermiyor
-- [ ] Production build başarılı
+- [x] Kaynak kod, lockfile ve .env.example hazır
+- [x] Production build başarılı
+- [x] API ve tarayıcı akışları izole test ortamında doğrulandı
+- [x] Wish Supabase organizasyonu seçildi, yeni proje hazır
+- [x] Migration ve seed canlı veritabanında çalıştırıldı
+- [ ] DATABASE_URL ve SITE_URL Vercel environment'a eklendi
+- [ ] GitHub repo erişimi açıldı ve kod gönderildi
+- [ ] Vercel Framework Preset Next.js, Node.js 22+
+- [ ] Canlı / ve /admin kontrol edildi
+- [ ] Canlı fiyat değişikliği farklı telefonda yenileme ile görüldü
+- [ ] Referans logo onaylandı; gerekiyorsa lisanslı Impact webfont eklendi
